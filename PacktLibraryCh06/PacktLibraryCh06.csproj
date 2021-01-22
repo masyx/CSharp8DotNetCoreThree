@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="PeopleAppCh06\obj\Debug\netcoreapp3.1\PeopleAppCh06.assets.cache" />
+    <None Remove="PeopleAppCh06\obj\Debug\netcoreapp3.1\PeopleAppCh06.csproj.FileListAbsolute.txt" />
+    <None Remove="PeopleAppCh06\obj\PeopleAppCh06.csproj.nuget.g.props" />
+    <None Remove="PeopleAppCh06\obj\PeopleAppCh06.csproj.nuget.g.targets" />
+    <None Remove="PeopleAppCh06\obj\project.assets.json" />
+    <None Remove="PeopleAppCh06\obj\project.nuget.cache" />
+    <None Remove="PeopleAppCh06\obj\PeopleAppCh06.csproj.nuget.dgspec.json" />
+    <None Remove="PeopleAppCh06\obj\Debug\netcoreapp3.1\PeopleAppCh06.AssemblyInfoInputs.cache" />
+    <None Remove="PeopleAppCh06\obj\Debug\netcoreapp3.1\PeopleAppCh06.csproj.CoreCompileInputs.cache" />
+    <None Remove="PeopleAppCh06\bin\Debug\netcoreapp3.1\PacktLibraryCh06.pdb" />
+    <None Remove="PeopleAppCh06\bin\Debug\netcoreapp3.1\PacktLibraryCh06.dll" />
+    <None Remove="PeopleAppCh06\obj\Debug\netcoreapp3.1\PeopleAppCh06.csproj.CopyComplete" />
+    <None Remove="PeopleAppCh06\bin\Debug\netcoreapp3.1\PeopleAppCh06.deps.json" />
+    <None Remove="PeopleAppCh06\bin\Debug\netcoreapp3.1\PeopleAppCh06.runtimeconfig.dev.json" />
+    <None Remove="PeopleAppCh06\bin\Debug\netcoreapp3.1\PeopleAppCh06.dll" />
+    <None Remove="PeopleAppCh06\bin\Debug\netcoreapp3.1\PeopleAppCh06.pdb" />
+    <None Remove="PeopleAppCh06\bin\Debug\netcoreapp3.1\PeopleAppCh06.runtimeconfig.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="PeopleAppCh06\obj\Debug\netcoreapp3.1\.NETCoreApp,Version=v3.1.AssemblyAttributes.cs" />
+    <Compile Remove="PeopleAppCh06\PeopleAppCh06.cs" />
+    <Compile Remove="PeopleAppCh06\obj\Debug\netcoreapp3.1\PeopleAppCh06.AssemblyInfo.cs" />
+  </ItemGroup>
+</Project>
