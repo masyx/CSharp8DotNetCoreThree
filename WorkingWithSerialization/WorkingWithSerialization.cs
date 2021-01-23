@@ -2,16 +2,18 @@
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.IO;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace WorkingWithSerialization
 {
     class WorkingWithSerialization
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             //SerializeAndDeseializeObjectGraphXML();
 
-            SerializeAndDeseializeObjectGraphJSON();
+            await SerializeAndDeseializeObjectGraphJSON();
         }
 
         static void SerializeAndDeseializeObjectGraphXML()
@@ -82,7 +84,7 @@ namespace WorkingWithSerialization
             }
         }
 
-        static void SerializeAndDeseializeObjectGraphJSON()
+        static async Task SerializeAndDeseializeObjectGraphJSON()
         {
             // create an object graph
             var people = new List<Person>
@@ -136,6 +138,23 @@ namespace WorkingWithSerialization
             // display the serialized object graph
             Console.WriteLine();
             Console.WriteLine(File.ReadAllText(jsonPath));
+
+
+            using (FileStream jsonLoad = File.Open(jsonPath, FileMode.Open))
+            {
+                // deserialize object graph into a List of Person
+                var loadedPeople = (List<Person>) await System.Text.Json.JsonSerializer.
+                    DeserializeAsync(utf8Json: jsonLoad, returnType: typeof(List<Person>));
+
+                Console.WriteLine();
+                foreach (var person in loadedPeople)
+                {
+                    Console.WriteLine("{0} has {1} {2}",
+                        person.LastName, person.Children?.Count >= 1 ? person.Children?.Count : 0,
+                        person.Children?.Count == 1 ? "child" : "children");
+                }
+            }
+            
         }
     }
 
