@@ -67,6 +67,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithEncodings", "Wor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithSerialization", "WorkingWithSerialization\WorkingWithSerialization.csproj", "{0A75D496-EDFA-404D-B59C-7287DF3477CE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ch11EntityFramework", "Ch11EntityFramework", "{C2CFFE4D-5CD6-41EC-AF24-AC633F0BD167}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithEFCore", "WorkingWithEFCore\WorkingWithEFCore.csproj", "{11BD6DD3-E548-44D6-8876-A3BD31DAC234}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|anycpu = Debug|anycpu
@@ -189,6 +193,10 @@ Global
 		{0A75D496-EDFA-404D-B59C-7287DF3477CE}.Debug|anycpu.Build.0 = Debug|Any CPU
 		{0A75D496-EDFA-404D-B59C-7287DF3477CE}.Release|anycpu.ActiveCfg = Release|Any CPU
 		{0A75D496-EDFA-404D-B59C-7287DF3477CE}.Release|anycpu.Build.0 = Release|Any CPU
+		{11BD6DD3-E548-44D6-8876-A3BD31DAC234}.Debug|anycpu.ActiveCfg = Debug|Any CPU
+		{11BD6DD3-E548-44D6-8876-A3BD31DAC234}.Debug|anycpu.Build.0 = Debug|Any CPU
+		{11BD6DD3-E548-44D6-8876-A3BD31DAC234}.Release|anycpu.ActiveCfg = Release|Any CPU
+		{11BD6DD3-E548-44D6-8876-A3BD31DAC234}.Release|anycpu.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{9D9D920D-CD8F-44A9-95FA-8CC0BF72C8CE} = {8E642355-0ABF-4EED-98A8-320983337FE6}
@@ -198,5 +206,6 @@ Global
 		{F45A2C08-8D1A-45CA-97D3-714962C40F61} = {136912D4-86C6-4ECF-A4E8-88D11B4DA1AD}
 		{177C99F5-933C-4708-B778-454E923FB14A} = {6C0F8C8B-E50E-4CE2-9864-2DA60A1E5413}
 		{46510F9D-DD11-4608-B5E6-6E4224FB6E44} = {8E642355-0ABF-4EED-98A8-320983337FE6}
+		{11BD6DD3-E548-44D6-8876-A3BD31DAC234} = {C2CFFE4D-5CD6-41EC-AF24-AC633F0BD167}
 	EndGlobalSection
 EndGlobal
