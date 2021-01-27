@@ -7,34 +7,36 @@ namespace AAATryingThingsOut
 {
     class AAATryingThingsOut
     {
+        private const string Phone = "PHONE";
+        private const string Email = "EMAIL";
+        private const string FirstName = "FIRSTNAME";
+        private const string MiddleName = "MIDDLENAME";
+        private const string LastName = "LASTNAME";
+        private const string Birthdate = "BIRTHDATE";
+        private const string Mobile = "MOBILE";
+        private const string Fax = "FAX";
+
         static void Main(string[] args)
         {
-            var xs = new[] { 4, 7, 9 };
-            var limits = FindMinMax(xs);
-            Console.WriteLine($"Limits of [{string.Join(" ", xs)}] are {limits.min} and {limits.max}");
+            var requestQuestions = new Dictionary<string, int>
+            {
+              { Phone, 1 },
+              { Email, 2 },
+              { FirstName, 3 },
+              { MiddleName, 4 },
+              { LastName, 5 },
+              { Birthdate, 6 },
+              { Mobile, 7 },
+              { Fax, 8 }
+            };
 
+            requestQuestions[Phone] = 99;
+
+            int number = requestQuestions[Phone];
+
+            Console.WriteLine(number);
         }
 
-        static(int min, int max) FindMinMax(int[] input)
-        {
-            if (input is null || input.Length == 0)
-            {
-                throw new ArgumentException("Cannot find minimum and maximum of a null or empty array.");
-            }
-            var min = int.MaxValue;
-            var max = int.MinValue;
-            foreach (var i in input)
-            {
-                if (i < min)
-                {
-                    min = i;
-                }
-                if (i > max)
-                {
-                    max = i;
-                }
-            }
-            return (min, max);
-        }
+
     }
 }
