@@ -1,6 +1,9 @@
 ﻿using System;
 using Packt.Shared;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using System.Linq;
 
 
@@ -11,14 +14,18 @@ namespace WorkingWithEFCore
         static void Main(string[] args)
         {
             //QueryingCategories();
-            FilteredIncludes(100);
+            //FilteredIncludes(100);
             //QueryingProducts();
+            QueryingWithLike();
         }
 
         static void QueryingCategories()
         {
             using (var db = new Northwind())
             {
+                var loggerFactory = db.GetService<ILoggerFactory>();
+                loggerFactory.AddProvider(new ConsoleLoggerProvider());
+
                 Console.WriteLine("Categories and how many products they have.");
 
                 // a query to get categories and they related products
@@ -26,7 +33,7 @@ namespace WorkingWithEFCore
 
                 foreach(var cat in cats)
                 {
-                    Console.WriteLine($" Category '{cat.CategoryName}' has {cat.Products.Count} products");
+                    Console.WriteLine($"Category '{cat.CategoryName}' has {cat.Products.Count} products");
                 }
             }
         }
@@ -78,6 +85,9 @@ namespace WorkingWithEFCore
 
             using(var db = new Northwind())
             {
+                var loggerFactory = db.GetService<ILoggerFactory>();
+                loggerFactory.AddProvider(new ConsoleLoggerProvider());
+
                 IQueryable<Product> products = db.Products.Where(p => p.Cost > minPrice)
                     .OrderByDescending(p => p.Cost);
 
@@ -90,6 +100,27 @@ namespace WorkingWithEFCore
                 }
 
                 Console.WriteLine($"ToQueryString: {products.ToQueryString()}");
+            }
+        }
+
+
+        static void QueryingWithLike()
+        {
+            using(var db = new Northwind())
+            {
+                var loggerFactory = db.GetService<ILoggerFactory>();
+                loggerFactory.AddProvider(new ConsoleLoggerProvider());
+
+                Console.Write("Enter part of the product name: ");
+                string input = Console.ReadLine();
+
+                IQueryable<Product> products = db.Products.Where(p => EF.Functions.Like(p.ProductName, $"%{input}%"));
+
+                foreach (var item in products)
+                {
+                    Console.WriteLine("{0} has {1} units in stock. Discontinued? {2}",
+                        item.ProductName, item.Stock, item.Discontinued);
+                }
             }
         }
     }
