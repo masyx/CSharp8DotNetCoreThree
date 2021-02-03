@@ -7,6 +7,7 @@ using Microsoft.Extensions.Logging;
 using System.Linq;
 
 
+
 namespace WorkingWithEFCore
 {
     class WorkingWithEFCore
@@ -16,7 +17,22 @@ namespace WorkingWithEFCore
             //QueryingCategories();
             //FilteredIncludes(100);
             //QueryingProducts();
-            QueryingWithLike();
+            //QueryingWithLike();
+
+            if (AddProduct(categoryID: 6, "Bob's Burger", price: 12))
+            {
+                Console.WriteLine("Add product successful.");
+            }
+
+            //if (IncreaseProductPrice("Bob", 34M))
+            //{
+            //    Console.WriteLine("Price updated successfully.");
+            //}
+
+            //ListProducts();
+
+            int deletedProductsCount = DeleteProducts("Bob");
+            Console.WriteLine($"{deletedProductsCount} deleted from database.");
         }
 
         static void QueryingCategories()
@@ -31,7 +47,7 @@ namespace WorkingWithEFCore
                 // a query to get categories and they related products
                 IQueryable<Category> cats = db.Categories.Include(cat => cat.Products);
 
-                foreach(var cat in cats)
+                foreach (var cat in cats)
                 {
                     Console.WriteLine($"Category '{cat.CategoryName}' has {cat.Products.Count} products");
                 }
@@ -120,6 +136,70 @@ namespace WorkingWithEFCore
                 {
                     Console.WriteLine("{0} has {1} units in stock. Discontinued? {2}",
                         item.ProductName, item.Stock, item.Discontinued);
+                }
+            }
+        }
+
+        static bool AddProduct(int categoryID, string productName, decimal? price)
+        {
+            using(var db = new Northwind())
+            {
+                var newProduct = new Product
+                {
+                    CategoryID = categoryID,
+                    ProductName = productName,
+                    Cost = price
+                };
+
+                // mark product as added in change tracking
+                db.Products.Add(newProduct);
+
+                // save tracked change to database
+                int affected = db.SaveChanges();
+                return (affected == 1);
+            }
+        }
+
+        static bool IncreaseProductPrice(string name, decimal newPrice)
+        {
+            using(var db = new Northwind())
+            {
+                // get first product whose name starts with name
+                var productToUpdate = db.Products.First(p => p.ProductName.StartsWith(name));
+
+                productToUpdate.Cost = newPrice;
+
+                int affected = db.SaveChanges();
+                return (affected == 1);
+            }
+        }
+
+        static int DeleteProducts(string name)
+        {
+            using(var db = new Northwind())
+            {
+                IQueryable<Product> productsToDelete = db.Products.Where(p => p.ProductName.StartsWith(name));
+
+                db.Products.RemoveRange(productsToDelete);
+
+                int affected = db.SaveChanges();
+                return affected;
+            }
+        }
+
+        static void ListProducts()
+        {
+            
+            using (var db = new Northwind())
+            {
+                
+                Console.WriteLine("{0,-3} {1,-35} {2,8} {3,5} {4}",
+                  "ID", "Product Name", "Cost", "Stock", "Disc.");
+                foreach (var item in db.Products.OrderByDescending(p => p.Cost))
+                {
+                    Console.WriteLine("{0:000} {1,-35} {2,8:$#,##0.00} {3,5} {4}",
+                      item.ProductID, item.ProductName, item.Cost,
+                      item.Stock, item.Discontinued);
                 }
             }
         }
