@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore.Storage;
 using System.Linq;
 
 
@@ -178,12 +179,19 @@ namespace WorkingWithEFCore
         {
             using(var db = new Northwind())
             {
-                IQueryable<Product> productsToDelete = db.Products.Where(p => p.ProductName.StartsWith(name));
+                using (IDbContextTransaction t = db.Database.BeginTransaction())
+                {
+                    Console.WriteLine($"Transaction isolation level: {t.GetDbTransaction().IsolationLevel}");
 
-                db.Products.RemoveRange(productsToDelete);
+                    IQueryable<Product> productsToDelete = db.Products.Where(p => p.ProductName.StartsWith(name));
 
-                int affected = db.SaveChanges();
-                return affected;
+                    db.Products.RemoveRange(productsToDelete);
+
+                    int affected = db.SaveChanges();
+                    t.Commit();
+                    return affected;
+                }
+                
             }
         }
 
