@@ -17,7 +17,16 @@ namespace LinqWithSets
             Console.WriteLine();
 
             Output(cohort2.Distinct(), "cohort2.Distinct():");
+            Console.WriteLine();
             Output(cohort2.Union(cohort3), "cohort2.Union(cohort3)");
+            Console.WriteLine();
+            Output(cohort2.Concat(cohort3), "cohort2.Concat(cohort2)");
+            Console.WriteLine();
+            Output(cohort2.Intersect(cohort3), "cohort2.Intersect(cohort3)");
+            Console.WriteLine();
+            Output(cohort2.Except(cohort3), "cohort2.Except(cohort3)");
+            Console.WriteLine();
+            Output(cohort1.Zip(cohort2, (c1, c2) => $"{c1} matched with {c2}"));
         }
 
         private static void Output(IEnumerable<string> cohort, string description = "")
@@ -29,6 +38,12 @@ namespace LinqWithSets
             Console.Write(" ");
 
             Console.WriteLine($"{string.Join(", ", cohort.ToArray())}");
+        }
+
+
+        static string ZipZip<TSecond>(string input1, TSecond input2)
+        {
+            return input1 + input2;
         }
     }
 }
