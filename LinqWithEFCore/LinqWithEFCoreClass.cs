@@ -11,7 +11,8 @@ namespace LinqWithEFCore
         {
             //FilterAndSort();
             //GroupJoinCategoriesAndProducts();
-            AggregateProducts();
+            //AggregateProducts();
+            CustomExtensionMethods();
         }
 
         // products that cost less than 10
@@ -90,6 +91,16 @@ namespace LinqWithEFCore
                   arg0: "Value of units in stock:",
                   arg1: db.Products.AsEnumerable()
                     .Sum(p => p.UnitsInStock * p.UnitPrice));
+            }
+        }
+
+        static void CustomExtensionMethods()
+        {
+            using (var db = new Northwind())
+            {
+                WriteLine($"Mean units in stock: {db.Products.Average(p => p.UnitsInStock):N0}");
+                WriteLine($"Mean unit price: {db.Products.Average(p => p.UnitPrice):C2}");
+                WriteLine($"Median units in stock: {db.Products.Median(p => p.UnitsInStock):N0}");
             }
         }
     }
