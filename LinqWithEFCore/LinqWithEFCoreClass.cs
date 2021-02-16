@@ -101,6 +101,9 @@ namespace LinqWithEFCore
                 WriteLine($"Mean units in stock: {db.Products.Average(p => p.UnitsInStock):N0}");
                 WriteLine($"Mean unit price: {db.Products.Average(p => p.UnitPrice):C2}");
                 WriteLine($"Median units in stock: {db.Products.Median(p => p.UnitsInStock):N0}");
+                WriteLine($"Median unit price is: {db.Products.Median(p => p.UnitPrice):C2}");
+                WriteLine($"Mode units in stock: {db.Products.Mode(p => p.UnitsInStock)}");
+                WriteLine($"Mode unit price is: {db.Products.Mode(p => p.UnitPrice)}");
             }
         }
     }
