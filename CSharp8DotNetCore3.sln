@@ -85,7 +85,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitoringApp", "Monitoring
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PerformanceAndScalability", "PerformanceAndScalability", "{92E29DBD-0AF3-45DF-8A9B-54F6AC9154A6}"
 EndProject
-Project("{9344BDBB-3E7F-41FC-A0DD-8665D75EE146}") = "MonitoringLib", "MonitoringLib\MonitoringLib.csproj", "{04F3DAE7-555B-4428-BBA6-BD80F741850D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitoringLib", "MonitoringLib\MonitoringLib.csproj", "{04F3DAE7-555B-4428-BBA6-BD80F741850D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsynchronousProgramming", "AsynchronousProgramming\AsynchronousProgramming.csproj", "{0B53EE8A-E6D5-4C25-87F6-F00B2EC8C828}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -237,6 +239,10 @@ Global
 		{04F3DAE7-555B-4428-BBA6-BD80F741850D}.Debug|anycpu.Build.0 = Debug|Any CPU
 		{04F3DAE7-555B-4428-BBA6-BD80F741850D}.Release|anycpu.ActiveCfg = Release|Any CPU
 		{04F3DAE7-555B-4428-BBA6-BD80F741850D}.Release|anycpu.Build.0 = Release|Any CPU
+		{0B53EE8A-E6D5-4C25-87F6-F00B2EC8C828}.Debug|anycpu.ActiveCfg = Debug|Any CPU
+		{0B53EE8A-E6D5-4C25-87F6-F00B2EC8C828}.Debug|anycpu.Build.0 = Debug|Any CPU
+		{0B53EE8A-E6D5-4C25-87F6-F00B2EC8C828}.Release|anycpu.ActiveCfg = Release|Any CPU
+		{0B53EE8A-E6D5-4C25-87F6-F00B2EC8C828}.Release|anycpu.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{9D9D920D-CD8F-44A9-95FA-8CC0BF72C8CE} = {8E642355-0ABF-4EED-98A8-320983337FE6}
