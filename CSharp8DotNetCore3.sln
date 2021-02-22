@@ -1,6 +1,7 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CastingConverting", "CastingConverting\CastingConverting.csproj", "{CE4EE7B0-7C27-4CD4-8670-0AD7CE3BF888}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandlingExceptions", "HandlingExceptions\HandlingExceptions.csproj", "{1875C7AF-2651-43D9-91AC-682310D590C9}"
@@ -9,85 +10,85 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WritingFunctions", "Writing
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Instrumenting", "Instrumenting\Instrumenting.csproj", "{F77535C0-FEE8-42E0-AE93-518B23192B6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PacktLibrary", "PacktLibrary\PacktLibrary.csproj", "{0E145F6D-4A91-44BC-9D6E-B9EEDADE32ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PacktLibrary", "PacktLibrary\PacktLibrary.csproj", "{0E145F6D-4A91-44BC-9D6E-B9EEDADE32ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleApp", "PeopleApp\PeopleApp.csproj", "{295B4A32-47B2-43A8-8916-1E56DDFB6094}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PeopleApp", "PeopleApp\PeopleApp.csproj", "{295B4A32-47B2-43A8-8916-1E56DDFB6094}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NullHandling", "NullHandling\NullHandling.csproj", "{86C71A3A-E5F8-47DF-AF3A-96C5C09F04E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NullHandling", "NullHandling\NullHandling.csproj", "{86C71A3A-E5F8-47DF-AF3A-96C5C09F04E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AAATryingThingsOut", "AAATryingThingsOut\AAATryingThingsOut.csproj", "{BAFAAEE4-B8C2-48B0-A958-94CC0B714DBB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AAATryingThingsOut", "AAATryingThingsOut\AAATryingThingsOut.csproj", "{BAFAAEE4-B8C2-48B0-A958-94CC0B714DBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParametersRefOut", "ParametersRefOut\ParametersRefOut.csproj", "{126192F8-0E7C-42D9-A986-E1E5DB710657}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParametersRefOut", "ParametersRefOut\ParametersRefOut.csproj", "{126192F8-0E7C-42D9-A986-E1E5DB710657}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter06", "Chapter06", "{8E642355-0ABF-4EED-98A8-320983337FE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PacktLibraryCh06", "PacktLibraryCh06\PacktLibraryCh06.csproj", "{46510F9D-DD11-4608-B5E6-6E4224FB6E44}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PacktLibraryCh06", "PacktLibraryCh06\PacktLibraryCh06.csproj", "{46510F9D-DD11-4608-B5E6-6E4224FB6E44}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleAppCh06", "PeopleAppCh06\PeopleAppCh06.csproj", "{9D9D920D-CD8F-44A9-95FA-8CC0BF72C8CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PeopleAppCh06", "PeopleAppCh06\PeopleAppCh06.csproj", "{9D9D920D-CD8F-44A9-95FA-8CC0BF72C8CE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter07", "Chapter07", "{6C0F8C8B-E50E-4CE2-9864-2DA60A1E5413}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AssembliesAndNamespaces", "AssembliesAndNamespaces", "{74111E0D-B3C0-462E-A4CA-FE952C345C9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssembliesAndNamespaces", "JustSimpleProject\AssembliesAndNamespaces.csproj", "{17353F68-D21E-4DFC-85C7-2EA379173B95}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssembliesAndNamespaces", "JustSimpleProject\AssembliesAndNamespaces.csproj", "{17353F68-D21E-4DFC-85C7-2EA379173B95}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SharedLibrary", "SharedLibrary", "{136912D4-86C6-4ECF-A4E8-88D11B4DA1AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedLibrary", "SharedLibrary\SharedLibrary.csproj", "{F45A2C08-8D1A-45CA-97D3-714962C40F61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedLibrary", "SharedLibrary\SharedLibrary.csproj", "{F45A2C08-8D1A-45CA-97D3-714962C40F61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCoreEverywhere", "DotNetCoreEverywhere\DotNetCoreEverywhere.csproj", "{177C99F5-933C-4708-B778-454E923FB14A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCoreEverywhere", "DotNetCoreEverywhere\DotNetCoreEverywhere.csproj", "{177C99F5-933C-4708-B778-454E923FB14A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithRegularExpressions", "WorkingWithRegularExpressions\WorkingWithRegularExpressions.csproj", "{514F7DF4-B37B-4189-9797-EA51017AE506}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithRegularExpressions", "WorkingWithRegularExpressions\WorkingWithRegularExpressions.csproj", "{514F7DF4-B37B-4189-9797-EA51017AE506}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithLists", "WorkingWithLists\WorkingWithLists.csproj", "{20ECF819-7623-419E-B2A6-56D19343C284}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithLists", "WorkingWithLists\WorkingWithLists.csproj", "{20ECF819-7623-419E-B2A6-56D19343C284}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithRanges", "WorkingWithRanges\WorkingWithRanges.csproj", "{EAF73669-B9E5-4BB7-8D52-1F7C925D6426}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithRanges", "WorkingWithRanges\WorkingWithRanges.csproj", "{EAF73669-B9E5-4BB7-8D52-1F7C925D6426}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithNetwork", "WorkingWithNetwork\WorkingWithNetwork.csproj", "{E8B678F6-E510-443B-BB64-79BEF95005F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithNetwork", "WorkingWithNetwork\WorkingWithNetwork.csproj", "{E8B678F6-E510-443B-BB64-79BEF95005F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithReflection", "WorkingWithReflection\WorkingWithReflection.csproj", "{363C4FEF-250E-4153-8661-B7C057598E3B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithReflection", "WorkingWithReflection\WorkingWithReflection.csproj", "{363C4FEF-250E-4153-8661-B7C057598E3B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Internationalization", "Internationalization\Internationalization.csproj", "{E2CC508E-3206-4DD0-9B0C-09A15E0F4F67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Internationalization", "Internationalization\Internationalization.csproj", "{E2CC508E-3206-4DD0-9B0C-09A15E0F4F67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithFileSystems", "WorkingWithFileSystems\WorkingWithFileSystems.csproj", "{1C2CAAA6-DA52-4A58-BC51-9F218EEFD26E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithFileSystems", "WorkingWithFileSystems\WorkingWithFileSystems.csproj", "{1C2CAAA6-DA52-4A58-BC51-9F218EEFD26E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkWithDrives", "WorkWithDrives\WorkWithDrives.csproj", "{70A136C8-361E-4FC2-93E6-D1B680FBDA65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkWithDrives", "WorkWithDrives\WorkWithDrives.csproj", "{70A136C8-361E-4FC2-93E6-D1B680FBDA65}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkWithDirectories", "WorkWithDirectories\WorkWithDirectories.csproj", "{5003D15D-8210-4AF2-96CF-DF840228D346}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkWithDirectories", "WorkWithDirectories\WorkWithDirectories.csproj", "{5003D15D-8210-4AF2-96CF-DF840228D346}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkWithFiles", "WorkWithFiles\WorkWithFiles.csproj", "{5AF55265-2802-44F1-B4DD-8B211F1AB77F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkWithFiles", "WorkWithFiles\WorkWithFiles.csproj", "{5AF55265-2802-44F1-B4DD-8B211F1AB77F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WrokingWithStreams", "WrokingWithStreams\WrokingWithStreams.csproj", "{929B9F1E-9C1E-4E58-BC47-D627C038604B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WrokingWithStreams", "WrokingWithStreams\WrokingWithStreams.csproj", "{929B9F1E-9C1E-4E58-BC47-D627C038604B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkWithXml", "WorkWithXml\WorkWithXml.csproj", "{1803DC45-EF1F-4ED1-8FE4-D7CCBF4F3873}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkWithXml", "WorkWithXml\WorkWithXml.csproj", "{1803DC45-EF1F-4ED1-8FE4-D7CCBF4F3873}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkWithCompression", "WorkWithCompression\WorkWithCompression.csproj", "{F142AAAD-7CEB-4C02-9191-3780D50C76F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkWithCompression", "WorkWithCompression\WorkWithCompression.csproj", "{F142AAAD-7CEB-4C02-9191-3780D50C76F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithEncodings", "WorkingWithEncodings\WorkingWithEncodings.csproj", "{7425F917-F625-4A10-9555-D86AA3D95062}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithEncodings", "WorkingWithEncodings\WorkingWithEncodings.csproj", "{7425F917-F625-4A10-9555-D86AA3D95062}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithSerialization", "WorkingWithSerialization\WorkingWithSerialization.csproj", "{0A75D496-EDFA-404D-B59C-7287DF3477CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithSerialization", "WorkingWithSerialization\WorkingWithSerialization.csproj", "{0A75D496-EDFA-404D-B59C-7287DF3477CE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EntityFramework", "EntityFramework", "{C2CFFE4D-5CD6-41EC-AF24-AC633F0BD167}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithEFCore", "WorkingWithEFCore\WorkingWithEFCore.csproj", "{11BD6DD3-E548-44D6-8876-A3BD31DAC234}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithEFCore", "WorkingWithEFCore\WorkingWithEFCore.csproj", "{11BD6DD3-E548-44D6-8876-A3BD31DAC234}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LINQ", "LINQ", "{8F3B6368-FAE1-4B72-A1FA-0DB5FCEEF39A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqWithObjects", "LinqWithObjects\LinqWithObjects.csproj", "{8D8ED170-DAFA-4B49-B6B4-50295C6A4A36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinqWithObjects", "LinqWithObjects\LinqWithObjects.csproj", "{8D8ED170-DAFA-4B49-B6B4-50295C6A4A36}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqWithEFCore", "LinqWithEFCore\LinqWithEFCore.csproj", "{EE7C795E-EAB0-4021-B875-FB477F5E430C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqWithSets", "LinqWithSets\LinqWithSets.csproj", "{2C009E21-432C-4BB2-B87A-BDF78D71FE28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqInParallel", "LinqInParallel\LinqInParallel.csproj", "{426A6DCB-C6FB-4107-8D79-ECD8C5799D4B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinqInParallel", "LinqInParallel\LinqInParallel.csproj", "{426A6DCB-C6FB-4107-8D79-ECD8C5799D4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitoringApp", "MonitoringApp\MonitoringApp.csproj", "{7018A125-417E-4953-9114-A1B27FA7822D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonitoringApp", "MonitoringApp\MonitoringApp.csproj", "{7018A125-417E-4953-9114-A1B27FA7822D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PerformanceAndScalability", "PerformanceAndScalability", "{92E29DBD-0AF3-45DF-8A9B-54F6AC9154A6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitoringLib", "MonitoringLib\MonitoringLib.csproj", "{04F3DAE7-555B-4428-BBA6-BD80F741850D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsynchronousProgramming", "AsynchronousProgramming\AsynchronousProgramming.csproj", "{0B53EE8A-E6D5-4C25-87F6-F00B2EC8C828}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsynchronousProgramming", "AsynchronousProgramming\AsynchronousProgramming.csproj", "{0B53EE8A-E6D5-4C25-87F6-F00B2EC8C828}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -244,14 +245,17 @@ Global
 		{0B53EE8A-E6D5-4C25-87F6-F00B2EC8C828}.Release|anycpu.ActiveCfg = Release|Any CPU
 		{0B53EE8A-E6D5-4C25-87F6-F00B2EC8C828}.Release|anycpu.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{46510F9D-DD11-4608-B5E6-6E4224FB6E44} = {8E642355-0ABF-4EED-98A8-320983337FE6}
 		{9D9D920D-CD8F-44A9-95FA-8CC0BF72C8CE} = {8E642355-0ABF-4EED-98A8-320983337FE6}
 		{74111E0D-B3C0-462E-A4CA-FE952C345C9B} = {6C0F8C8B-E50E-4CE2-9864-2DA60A1E5413}
 		{17353F68-D21E-4DFC-85C7-2EA379173B95} = {74111E0D-B3C0-462E-A4CA-FE952C345C9B}
 		{136912D4-86C6-4ECF-A4E8-88D11B4DA1AD} = {6C0F8C8B-E50E-4CE2-9864-2DA60A1E5413}
 		{F45A2C08-8D1A-45CA-97D3-714962C40F61} = {136912D4-86C6-4ECF-A4E8-88D11B4DA1AD}
 		{177C99F5-933C-4708-B778-454E923FB14A} = {6C0F8C8B-E50E-4CE2-9864-2DA60A1E5413}
-		{46510F9D-DD11-4608-B5E6-6E4224FB6E44} = {8E642355-0ABF-4EED-98A8-320983337FE6}
 		{11BD6DD3-E548-44D6-8876-A3BD31DAC234} = {C2CFFE4D-5CD6-41EC-AF24-AC633F0BD167}
 		{8D8ED170-DAFA-4B49-B6B4-50295C6A4A36} = {8F3B6368-FAE1-4B72-A1FA-0DB5FCEEF39A}
 		{EE7C795E-EAB0-4021-B875-FB477F5E430C} = {8F3B6368-FAE1-4B72-A1FA-0DB5FCEEF39A}
@@ -259,5 +263,8 @@ Global
 		{426A6DCB-C6FB-4107-8D79-ECD8C5799D4B} = {8F3B6368-FAE1-4B72-A1FA-0DB5FCEEF39A}
 		{7018A125-417E-4953-9114-A1B27FA7822D} = {92E29DBD-0AF3-45DF-8A9B-54F6AC9154A6}
 		{04F3DAE7-555B-4428-BBA6-BD80F741850D} = {92E29DBD-0AF3-45DF-8A9B-54F6AC9154A6}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FC26A9DB-68E6-42E4-B3D3-1F08C3CEC8B0}
 	EndGlobalSection
 EndGlobal
