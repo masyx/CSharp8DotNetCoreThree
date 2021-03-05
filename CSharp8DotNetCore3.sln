@@ -96,7 +96,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NestedAndChildTasks", "Nest
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SynchronizingResourceAccessProgram", "SynchronizingResourceAccess,\SynchronizingResourceAccessProgram.csproj", "{8C10E227-847D-45F6-A7B7-4ACEDFD343DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncConsole", "AsyncConsole\AsyncConsole.csproj", "{6E42AA96-0968-488C-932C-29F27124BBC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncConsole", "AsyncConsole\AsyncConsole.csproj", "{6E42AA96-0968-488C-932C-29F27124BBC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegatesAndEvents1", "DelegatesAndEvents1\DelegatesAndEvents1.csproj", "{9546DF0E-19B4-4E1B-8289-3DF503E1CB0E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -264,6 +266,10 @@ Global
 		{6E42AA96-0968-488C-932C-29F27124BBC7}.Debug|anycpu.Build.0 = Debug|Any CPU
 		{6E42AA96-0968-488C-932C-29F27124BBC7}.Release|anycpu.ActiveCfg = Release|Any CPU
 		{6E42AA96-0968-488C-932C-29F27124BBC7}.Release|anycpu.Build.0 = Release|Any CPU
+		{9546DF0E-19B4-4E1B-8289-3DF503E1CB0E}.Debug|anycpu.ActiveCfg = Debug|Any CPU
+		{9546DF0E-19B4-4E1B-8289-3DF503E1CB0E}.Debug|anycpu.Build.0 = Debug|Any CPU
+		{9546DF0E-19B4-4E1B-8289-3DF503E1CB0E}.Release|anycpu.ActiveCfg = Release|Any CPU
+		{9546DF0E-19B4-4E1B-8289-3DF503E1CB0E}.Release|anycpu.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
