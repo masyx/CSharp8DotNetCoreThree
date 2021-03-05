@@ -4,15 +4,17 @@ using System.Text;
 
 namespace DelegatesAndEvents1
 {
-    class ThresholdReachedEventArgs : EventArgs
+    // Class which holds custom event info
+    internal class ThresholdReachedEventArgs : EventArgs
     {
         public DateTime TimeThresholdReached { get; set; }
-        public int Threashold { get; set; }
+        public int Threshold { get; set; }
 
+        public ThresholdReachedEventArgs() { }
         public ThresholdReachedEventArgs(DateTime timeNow, int threshold)
         {
             TimeThresholdReached = timeNow;
-            Threashold = threshold;
+            Threshold = threshold;
         }
     }
 }

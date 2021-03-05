@@ -2,15 +2,24 @@
 
 namespace DelegatesAndEvents1
 {
-    class DelegatesAndEvents1Program
+    // CLASS THAT SUBSCRIBES TO THE EVENT
+    internal class DelegatesAndEvents1Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
+            StartOver:
             Console.WriteLine("Enter threshold value: ");
-            if (int.TryParse(Console.ReadLine(), out int threshold))
+
+            var conversionSuccessful = int.TryParse(Console.ReadLine(), out int threshold);
+
+           
+            if (conversionSuccessful)
             {
                 var counter = new Counter(threshold);
-                counter.ThresholdReached = new EventHandler<ThresholdReachedEventArgs>(HHH);
+                // SUBSCRIBE TO THE EVENT
+                //counter.ThresholdReached += new EventHandler<ThresholdReachedEventArgs>(Counter_ThreasholdReached);
+                counter.ThresholdReached += Counter_ThresholdReached;
+                
                 Console.WriteLine("Press 'a' to increase total");
                 while (Console.ReadKey(true).KeyChar == 'a')
                 {
@@ -18,21 +27,18 @@ namespace DelegatesAndEvents1
                     counter.Add(1);
                 }
             }
-            else if (Console.ReadKey().Key == ConsoleKey.Escape)
-            {
-                Environment.Exit(999);
-            }
             else
             {
-                Console.WriteLine("Please enter a number or press Esc to cancel program");
+                Console.WriteLine("Enter a valid number.\n");
+                goto StartOver;
             }
-
-
         }
 
-        public static void HHH(object sender, ThresholdReachedEventArgs eventArgs)
+        // Define what actions to take when event is raised
+        // this is EVENT HANDLER
+        public static void Counter_ThresholdReached(object sender, ThresholdReachedEventArgs eventArgs)
         {
-            Console.WriteLine($"Threshhold reached on: {eventArgs.TimeThresholdReached}");
+            Console.WriteLine($"Threshold was set to {eventArgs.Threshold} and reached on: {eventArgs.TimeThresholdReached}");
         }
     }
 }
