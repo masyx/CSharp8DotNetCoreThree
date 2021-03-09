@@ -27,8 +27,11 @@ namespace DelegatesAndEvents1
             }
             var thresholdEventArgs = new ThresholdReachedEventArgs(DateTime.Now, Threshold);
 
-            // RAISING AN EVENT
+            // RAISING AN EVENT, THIS IS THE RIGHT WAY TO DO IT
             OnThresholdReached(thresholdEventArgs);
+
+            // this is BAD PRACTICE, DON'T do it, just for study purpose here
+            //ThresholdReached(this, args); /* OR */ ThresholdReached?.Invoke(this, args);
         }
 
         // Wrap event invocation inside protected virtual method
