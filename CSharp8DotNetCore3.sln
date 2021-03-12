@@ -102,7 +102,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelegatesAndEvents1", "Dele
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PracticalApp", "PracticalApp", "{8B56F1C3-07DA-4182-A393-1C3CAD0DDCBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthwindWeb", "NorthwindWeb\NorthwindWeb.csproj", "{5810B4AD-97B9-4392-986E-EFC5C8BA365A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthwindWeb", "NorthwindWeb\NorthwindWeb.csproj", "{5810B4AD-97B9-4392-986E-EFC5C8BA365A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
