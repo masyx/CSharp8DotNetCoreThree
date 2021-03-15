@@ -34,8 +34,8 @@ namespace NorthwindWeb
             app.UseRouting();
             app.UseHttpsRedirection();
 
-            //app.UseDefaultFiles(); // index.html, default.html, and so on
-            //app.UseStaticFiles();
+            app.UseDefaultFiles(); // index.html, default.html, and so on
+            app.UseStaticFiles();
 
             app.UseEndpoints(endpoints =>
             {

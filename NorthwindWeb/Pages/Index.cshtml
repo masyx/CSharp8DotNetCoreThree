@@ -4,33 +4,16 @@
     public string DayName { get; set; }
     public void OnGet()
     {
+        ViewData["Title"] = "Northwind Website";
         Model.DayName = DateTime.Now.ToString("dddd");
     }
 }
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <title>Welcome ASP.NET Core!</title>
-</head>
-<body>
-    <div class="container">
-        <div class="jumbotron">
-            <h1 class="display-3">Welcome to Northwind!</h1>
-            <p class="lead">We supply products to our customers.</p>
-            <hr />
-            <p>It's @Model.DayName! Our customers include restaurants, hotels, and cruise lines.</p>
-            <p>
-                <a class="btn btn-primary"
-                   href="https://www.asp.net/">Learn more</a>
-            </p>
-        </div>
-    </div>
-</body>
-</html>
+<div class="jumbotron">
+    <h1 class="display-3">Welcome to Northwind!</h1>
+    <p class="lead">We supply products to our customers.</p>
+    <hr />
+    <p>It's @Model.DayName! Our customers include restaurants, hotels, and cruise lines.</p>
+    <p>
+        <a class="btn btn-primary" href="Suppliers">Learn more about our suppliers</a>
+    </p>
+</div>
