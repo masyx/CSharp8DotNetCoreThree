@@ -9,30 +9,30 @@ using Microsoft.EntityFrameworkCore;
 namespace Packt.Shared
 {
     [Table("Order Details")]
-    [Index(nameof(OrderId), Name = "OrderID")]
-    [Index(nameof(OrderId), Name = "OrdersOrder_Details")]
-    [Index(nameof(ProductId), Name = "ProductID")]
-    [Index(nameof(ProductId), Name = "ProductsOrder_Details")]
+    [Index(nameof(OrderID), Name = "OrderID")]
+    [Index(nameof(OrderID), Name = "OrdersOrder_Details")]
+    [Index(nameof(ProductID), Name = "ProductID")]
+    [Index(nameof(ProductID), Name = "ProductsOrder_Details")]
     public partial class OrderDetail
     {
         [Key]
-        [Column("OrderID", TypeName = "int")]
-        public long OrderId { get; set; }
+        [Column(TypeName = "int")]
+        public long OrderID { get; set; }
         [Key]
         [Column("ProductID", TypeName = "int")]
-        public long ProductId { get; set; }
+        public long ProductID { get; set; }
         [Required]
         [Column(TypeName = "money")]
-        public byte[] UnitPrice { get; set; }
+        public decimal? UnitPrice { get; set; }
         [Column(TypeName = "smallint")]
         public long Quantity { get; set; }
         [Column(TypeName = "real")]
         public double Discount { get; set; }
 
-        [ForeignKey(nameof(OrderId))]
+        [ForeignKey(nameof(OrderID))]
         [InverseProperty("OrderDetails")]
         public virtual Order Order { get; set; }
-        [ForeignKey(nameof(ProductId))]
+        [ForeignKey(nameof(ProductID))]
         [InverseProperty("OrderDetails")]
         public virtual Product Product { get; set; }
     }

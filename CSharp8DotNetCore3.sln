@@ -104,7 +104,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PracticalApp", "PracticalAp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthwindWeb", "NorthwindWeb\NorthwindWeb.csproj", "{5810B4AD-97B9-4392-986E-EFC5C8BA365A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthwindEntitiesLib", "NorthwindEntitiesLib\NorthwindEntitiesLib.csproj", "{7FAC93A4-A70A-486F-A344-F4AC0137D174}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthwindEntitiesLib", "NorthwindEntitiesLib\NorthwindEntitiesLib.csproj", "{7FAC93A4-A70A-486F-A344-F4AC0137D174}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthwindContextLib", "NorthwindContextLib\NorthwindContextLib.csproj", "{1062557A-6FF6-4E94-8403-BE33EBEC239B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -284,6 +286,10 @@ Global
 		{7FAC93A4-A70A-486F-A344-F4AC0137D174}.Debug|anycpu.Build.0 = Debug|Any CPU
 		{7FAC93A4-A70A-486F-A344-F4AC0137D174}.Release|anycpu.ActiveCfg = Release|Any CPU
 		{7FAC93A4-A70A-486F-A344-F4AC0137D174}.Release|anycpu.Build.0 = Release|Any CPU
+		{1062557A-6FF6-4E94-8403-BE33EBEC239B}.Debug|anycpu.ActiveCfg = Debug|Any CPU
+		{1062557A-6FF6-4E94-8403-BE33EBEC239B}.Debug|anycpu.Build.0 = Debug|Any CPU
+		{1062557A-6FF6-4E94-8403-BE33EBEC239B}.Release|anycpu.ActiveCfg = Release|Any CPU
+		{1062557A-6FF6-4E94-8403-BE33EBEC239B}.Release|anycpu.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -309,6 +315,7 @@ Global
 		{6E42AA96-0968-488C-932C-29F27124BBC7} = {27F1346B-13DA-4656-BBC2-115F07EE8C9C}
 		{5810B4AD-97B9-4392-986E-EFC5C8BA365A} = {8B56F1C3-07DA-4182-A393-1C3CAD0DDCBA}
 		{7FAC93A4-A70A-486F-A344-F4AC0137D174} = {8B56F1C3-07DA-4182-A393-1C3CAD0DDCBA}
+		{1062557A-6FF6-4E94-8403-BE33EBEC239B} = {8B56F1C3-07DA-4182-A393-1C3CAD0DDCBA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FC26A9DB-68E6-42E4-B3D3-1F08C3CEC8B0}

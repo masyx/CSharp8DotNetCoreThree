@@ -24,33 +24,38 @@ namespace Packt.Shared
         }
 
         [Key]
-        [Column("OrderID")]
-        public long OrderId { get; set; }
+        public long OrderID { get; set; }
         [Column("CustomerID", TypeName = "nchar (5)")]
         public string CustomerId { get; set; }
         [Column("EmployeeID", TypeName = "int")]
         public long? EmployeeId { get; set; }
         [Column(TypeName = "datetime")]
-        public byte[] OrderDate { get; set; }
+        public DateTime? OrderDate { get; set; }
         [Column(TypeName = "datetime")]
-        public byte[] RequiredDate { get; set; }
+        public DateTime? RequiredDate { get; set; }
         [Column(TypeName = "datetime")]
-        public byte[] ShippedDate { get; set; }
+        public DateTime? ShippedDate { get; set; }
         [Column(TypeName = "int")]
         public long? ShipVia { get; set; }
         [Column(TypeName = "money")]
-        public byte[] Freight { get; set; }
+        public decimal? Freight { get; set; }
         [Column(TypeName = "nvarchar (40)")]
+        [StringLength(40)]
         public string ShipName { get; set; }
         [Column(TypeName = "nvarchar (60)")]
+        [StringLength(60)]
         public string ShipAddress { get; set; }
         [Column(TypeName = "nvarchar (15)")]
+        [StringLength(15)]
         public string ShipCity { get; set; }
         [Column(TypeName = "nvarchar (15)")]
+        [StringLength(15)]
         public string ShipRegion { get; set; }
         [Column(TypeName = "nvarchar (10)")]
+        [StringLength(10)]
         public string ShipPostalCode { get; set; }
         [Column(TypeName = "nvarchar (15)")]
+        [StringLength(15)]
         public string ShipCountry { get; set; }
 
         [ForeignKey(nameof(CustomerId))]
