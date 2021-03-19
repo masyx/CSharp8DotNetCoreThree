@@ -19,9 +19,11 @@
 </div>
 
 <div class="row">
-    <p>Enter a name for a new supplier</p>
+    <p>Add a new supplier</p>
     <form method="post">
-        <div><input asp-for="Supplier.CompanyName" /></div>
+        <div><input asp-for="Supplier.CompanyName" placeholder="Comany Name"/></div>
+        <div><input asp-for="Supplier.Country" placeholder="Country"/></div>
+        <div><input asp-for="Supplier.Phone" placeholder="Pnone"/></div>
         <input type="submit" />
     </form>
 </div>
