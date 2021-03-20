@@ -5,12 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\" />
+    <ProjectReference Include="..\NorthwindContextLib\NorthwindContextLib.csproj" />
+    <ProjectReference Include="..\NorthwindEmployees\NorthwindEmployees.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NorthwindContextLib\NorthwindContextLib.csproj" />
-    <ProjectReference Include="..\NorthwindEmployees\NorthwindEmployees.csproj" />
+    <Folder Include="wwwroot\" />
   </ItemGroup>
 
 
