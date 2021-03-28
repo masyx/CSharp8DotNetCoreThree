@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace NorthwindMvc
 {
-    public class Program
+    public class NorthwindMvcProgram
     {
         public static void Main(string[] args)
         {
