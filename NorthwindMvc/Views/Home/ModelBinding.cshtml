@@ -1,4 +1,4 @@
-﻿@model NorthwindMvc.Models.Thing
+﻿@model NorthwindMvc.Models.HomeModelBindingViewModel
 @{
     ViewData["Title"] = "Model Binding Demo";
 }
@@ -17,10 +17,19 @@
     <hr />
     <div>
         <dl class="dl-horizontal">
-            <dt>Model.ID</dt>
-            <dd>@Model.ID</dd>
-            <dt>Model.Color</dt>
-            <dd>@Model.Color</dd>
+            <dt>Model.Thing.ID</dt>
+            <dd>@Model.Thing.ID</dd>
+            <dt>Model.Thing.Color</dt>
+            <dd>@Model.Thing.Color</dd>
         </dl>
     </div>
+    @if (Model.HasErrors)
+    {
+        <div>
+            @foreach (string errorMessage in Model.ValidationErrors)
+            {
+                <div class="alert alert-danger" role="alert">@errorMessage</div>
+            }
+    </div>
+    }
 }
