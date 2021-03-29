@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Packt.Shared;
+using Microsoft.EntityFrameworkCore;
 
 namespace NorthwindMvc.Controllers
 {
@@ -85,6 +86,28 @@ namespace NorthwindMvc.Controllers
                     .Select(error => error.ErrorMessage)
             };
 
+            return View(model);
+        }
+
+        public IActionResult ProductsThatCostMoreThan(decimal? price)
+        {
+            if (!price.HasValue)
+            {
+                return NotFound("You must pass a product price in the query string, " +
+                    "for example, /Home/ProductsThatCostMoreThan?price = 50");
+            }
+
+            IEnumerable<Product> model = _db.Products
+                .Include(t => t.Category)
+                .Include(t => t.Supplier)
+                .Where(p => p.UnitPrice > price);
+
+            if (model.Count() == 0)
+            {
+                return View($"Couldn't find any product with the price more than {price}");
+            }
+
+            ViewData["MaxPrice"] = price.Value.ToString("C");
             return View(model);
         }
     }
