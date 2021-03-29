@@ -1,0 +1,26 @@
+﻿@model NorthwindMvc.Models.Thing
+@{
+    ViewData["Title"] = "Model Binding Demo";
+}
+<h1>@ViewData["Title"]</h1>
+<div>
+    Enter values for your thing in the following form:
+</div>
+<form method="POST" action="/home/modelbinding/2?id=3">
+    <input name="id" value="1" />
+    <input name="color" value="Red" />
+    <input type="submit" />
+</form>
+@if (Model != null)
+{
+    <h2>Submitted Thing</h2>
+    <hr />
+    <div>
+        <dl class="dl-horizontal">
+            <dt>Model.ID</dt>
+            <dd>@Model.ID</dd>
+            <dt>Model.Color</dt>
+            <dd>@Model.Color</dd>
+        </dl>
+    </div>
+}
