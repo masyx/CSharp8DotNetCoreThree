@@ -22,13 +22,13 @@ namespace NorthwindMvc.Controllers
             _db = injectedContext; 
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             var model = new HomeIndexViewModel
             {
                 VisitorCount = new Random().Next(1, 1000),
-                Categories = _db.Categories.ToList(),
-                Products = _db.Products.ToList()
+                Categories = await _db.Categories.ToListAsync(),
+                Products = await _db.Products.ToListAsync()
             };
             return View(model);
         }
@@ -48,14 +48,14 @@ namespace NorthwindMvc.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        public IActionResult ProductDetail(int? id)
+        public async Task<IActionResult> ProductDetail(int? id)
         {
             if (!id.HasValue)
             {
                 return NotFound("You must pass a product ID in the route, for example, /Home/ProductDetail/21");
             }
 
-            var model = _db.Products.SingleOrDefault(product => product.ProductID == id);
+            var model = await _db.Products.SingleOrDefaultAsync(product => product.ProductID == id);
 
             //if(model is null)
             //{
