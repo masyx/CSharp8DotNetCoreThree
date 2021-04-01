@@ -37,13 +37,15 @@ namespace NorthwindService.Controllers
         public IEnumerable<WeatherForecast> Get(int days)
         {
             var rng = new Random();
-            return Enumerable.Range(1, days).Select(index => new WeatherForecast
+            var forecastArray = Enumerable.Range(1, days).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
                 TemperatureC = rng.Next(-20, 55),
                 Summary = Summaries[rng.Next(Summaries.Length)]
             })
             .ToArray();
+
+            return forecastArray;
         }
     }
 }

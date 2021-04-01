@@ -7,10 +7,14 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using System.IO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Packt.Shared;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Formatters;
 
 namespace NorthwindService
 {
@@ -26,8 +30,33 @@ namespace NorthwindService
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //C:\Users\Sergey\source\repos\CSharp8DotNetCoreThree\NorthwindContextLib\Northwind.db
+            string databasePath = Path.Combine("..", "NorthwindContextLib\\Northwind.db");
+            services.AddDbContext<Northwind>(option => option.UseSqlite($"Data Source={databasePath}"));
 
-            services.AddControllers();
+            services.AddControllers(options =>
+            {
+                Console.WriteLine("Default output formatters:");
+                foreach (IOutputFormatter formatter in options.OutputFormatters)
+                {
+                    var mediaFormatter = formatter as OutputFormatter;
+                    if (mediaFormatter == null)
+                    {
+                        Console.WriteLine($" {formatter.GetType().Name}");
+                    }
+                    else // OutputFormatter class has SupportedMediaTypes
+                    {
+                        Console.WriteLine(" {0}, Media types: {1}",
+                        arg0: mediaFormatter.GetType().Name,
+                        arg1: string.Join(", ",
+                        mediaFormatter.SupportedMediaTypes));
+                    }
+                }
+            })
+            .AddXmlDataContractSerializerFormatters()
+            .AddXmlSerializerFormatters()
+            .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+            
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "NorthwindService", Version = "v1" });
