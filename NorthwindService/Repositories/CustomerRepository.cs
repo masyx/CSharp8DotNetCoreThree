@@ -44,26 +44,71 @@ namespace NorthwindService.Repositories
             {
                 return _customerCache.AddOrUpdate(c.CustomerID, c, UpdateCache);
             }
-        }
-
-        public Task<bool?> DeleteAsync(string id)
-        {
-            throw new NotImplementedException();
+            else
+            {
+                return null;
+            }
         }
 
         public Task<IEnumerable<Customer>> RetrieveAllAsync()
         {
-            throw new NotImplementedException();
+            // for performace, get from cache
+            return Task.Run<IEnumerable<Customer>>(() => _customerCache.Values);
         }
 
         public Task<Customer> RetrieveAsync(string id)
         {
-            throw new NotImplementedException();
+            return Task.Run(() =>
+            {
+                // for performance get from cache
+                id = id.ToUpper();
+                _customerCache.TryGetValue(id, out Customer c);
+                return c;
+            });
         }
 
-        public Task<Customer> UpdateAsync(string id, Customer c)
+        public async Task<Customer> UpdateAsync(string id, Customer c)
         {
-            throw new NotImplementedException();
+            // normalize customer id
+            id = id.ToUpper();
+            c.CustomerID = c.CustomerID.ToUpper();
+
+            // update in db
+            db.Customers.Update(c);
+            int affected = await db.SaveChangesAsync();
+            if (affected == 1)
+            {
+                // update in cache
+                UpdateCache(id, c);
+            }
+            return null;
+        }
+
+        public async Task<bool?> DeleteAsync(string id)
+        {
+            id = id.ToUpper();
+
+            var c = db.Customers.Find(id);
+            db.Customers.Remove(c);
+            int affected = await db.SaveChangesAsync();
+            if (affected == 1)
+            {
+                _customerCache.Remove(id, out c);
+            }
+            return null;
+        }
+
+        private Customer UpdateCache(string id, Customer c)
+        {
+            Customer old;
+            if (_customerCache.TryGetValue(id, out old))
+            {
+                if (_customerCache.TryUpdate(id, c, old))
+                {
+                    return c;
+                }
+            }
+            return null;
         }
     }
 }
