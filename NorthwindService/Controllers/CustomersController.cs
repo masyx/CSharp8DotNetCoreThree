@@ -113,6 +113,19 @@ namespace NorthwindService.Controllers
         [ProducesResponseType(204)]
         public async Task<IActionResult> Delete(string id)
         {
+            if (id == "666")
+            {
+                var problemDetails = new ProblemDetails
+                {
+                    Status = StatusCodes.Status400BadRequest,
+                    Type = "https://localhost:5001/customers/failed-to-delete",
+                    Title = $"Customer ID {id} found but failed to delete.",
+                    Detail = "More details like Company Name, Country and so on.",
+                    Instance = HttpContext.Request.Path
+                };
+                return BadRequest(problemDetails); // 400 Bad request
+            }
+
             var existing = await repo.RetrieveAsync(id);
             if (existing == null)
             {
