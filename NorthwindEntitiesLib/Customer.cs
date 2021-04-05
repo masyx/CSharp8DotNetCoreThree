@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
+using System.Xml.Serialization;
 
 #nullable disable
 
@@ -57,6 +58,7 @@ namespace Packt.Shared
         public string Fax { get; set; }
 
         [InverseProperty(nameof(Order.Customer))]
+        [XmlIgnore]
         public virtual ICollection<Order> Orders { get; set; }
     }
 }
