@@ -77,5 +77,57 @@ namespace NorthwindService.Controllers
                 value: added);
         }
 
+        // POST: api/customers/[id]
+        // BODY: Customer (JSON, XML)
+        [HttpPut("{id}")]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(404)]
+        [ProducesResponseType(204)]
+        public async Task<IActionResult> Update(string id, [FromBody] Customer c)
+        {
+            id = id.ToUpper();
+            c.CustomerID = c.CustomerID.ToUpper();
+
+            if (c == null || id != c.CustomerID)
+            {
+                return BadRequest(); // 400 Bad request
+            }
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState); // 400 Bad request
+            }
+
+            var existing = await repo.RetrieveAsync(id);
+            if (existing == null)
+            {
+                return NotFound(); // 404 Not found
+            }
+            await repo.UpdateAsync(id, c);
+            return new NoContentResult(); // 204 No content
+        }
+
+        // DELETE: api/customers/[id]
+        [HttpDelete("{id}")]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(404)]
+        [ProducesResponseType(204)]
+        public async Task<IActionResult> Delete(string id)
+        {
+            var existing = await repo.RetrieveAsync(id);
+            if (existing == null)
+            {
+                return NotFound(); // 404 Not found
+            }
+
+            bool? deleted = await repo.DeleteAsync(id);
+            if (deleted.HasValue && deleted.Value)
+            {
+                return new NoContentResult(); // 204 No content
+            }
+            else
+            {
+                return BadRequest($"Customer {id} was found but failed to delete."); // 400 Bad request
+            }
+        }
     }
 }
