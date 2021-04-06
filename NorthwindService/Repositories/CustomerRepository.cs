@@ -93,7 +93,7 @@ namespace NorthwindService.Repositories
             int affected = await db.SaveChangesAsync();
             if (affected == 1)
             {
-                _customerCache.Remove(id, out c);
+                return _customerCache.TryRemove(id, out c);
             }
             return null;
         }

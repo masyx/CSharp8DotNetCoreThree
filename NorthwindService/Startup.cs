@@ -16,6 +16,7 @@ using Packt.Shared;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using NorthwindService.Repositories;
+using Swashbuckle.AspNetCore.SwaggerUI;
 
 namespace NorthwindService
 {
@@ -60,7 +61,7 @@ namespace NorthwindService
             
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "NorthwindService", Version = "v1" });
+                c.SwaggerDoc(name: "v1", info: new OpenApiInfo { Title = "NorthwindService API", Version = "v1" });
             });
 
             services.AddScoped<ICustomerRepository, CustomerRepository>();
@@ -73,7 +74,18 @@ namespace NorthwindService
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "NorthwindService v1"));
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "NorthwindService API version v1");
+
+                    c.SupportedSubmitMethods(new[]
+                    {
+                        SubmitMethod.Get,
+                        SubmitMethod.Post,
+                        SubmitMethod.Put,
+                        SubmitMethod.Delete
+                    });
+                });
             }
 
             app.UseHttpsRedirection();
