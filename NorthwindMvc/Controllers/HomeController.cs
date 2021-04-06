@@ -8,18 +8,23 @@ using System.Linq;
 using System.Threading.Tasks;
 using Packt.Shared;
 using Microsoft.EntityFrameworkCore;
+using System.Net.Http;
+using System.Net.Http.Json;
 
 namespace NorthwindMvc.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IHttpClientFactory _clientFactory;
         private readonly ILogger<HomeController> _logger;
         private Northwind _db;
 
-        public HomeController(ILogger<HomeController> logger, Northwind injectedContext)
+        public HomeController(ILogger<HomeController> logger, Northwind injectedContext
+            ,IHttpClientFactory clientFactory)
         {
             _logger = logger;
-            _db = injectedContext; 
+            _db = injectedContext;
+            _clientFactory = clientFactory;
         }
 
         public async Task<IActionResult> Index()
@@ -108,6 +113,30 @@ namespace NorthwindMvc.Controllers
             }
 
             ViewData["MaxPrice"] = price.Value.ToString("C");
+            return View(model);
+        }
+
+        public async Task<IActionResult> Customers(string country)
+        {
+            string uri;
+            if (string.IsNullOrWhiteSpace(country))
+            {
+                ViewData["Title"] = "All Customers Worldwide";
+                uri = "api/customers/";
+            }
+            else
+            {
+                ViewData["Title"] = $"Customers from {country}";
+                uri = $"api/customers/?country={country}";
+            }
+
+            var client = _clientFactory.CreateClient(name: "NorthwindService");
+
+            var request = new HttpRequestMessage(HttpMethod.Get, uri);
+            var response = await client.SendAsync(request);
+
+            var model = await response.Content.ReadFromJsonAsync<IEnumerable<Customer>>();
+
             return View(model);
         }
     }
