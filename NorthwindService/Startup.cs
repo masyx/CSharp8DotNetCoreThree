@@ -66,6 +66,7 @@ namespace NorthwindService
 
             services.AddScoped<ICustomerRepository, CustomerRepository>();
             services.AddCors();
+            services.AddHealthChecks().AddDbContextCheck<Northwind>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -108,6 +109,8 @@ namespace NorthwindService
             {
                 endpoints.MapControllers();
             });
+
+            app.UseHealthChecks(path: "/howdoyoufeel");
         }
     }
 }
