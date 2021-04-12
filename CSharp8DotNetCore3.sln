@@ -118,7 +118,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthwindMvc", "NorthwindMv
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthwindService", "NorthwindService\NorthwindService.csproj", "{A19C298F-C08F-441E-BEF6-25E91F5B3FDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthwindBlazorServer", "NorthwindBlazorServer\NorthwindBlazorServer.csproj", "{14883F4A-4FAC-498F-BAFE-2E47ECF25DEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthwindBlazorServer", "NorthwindBlazorServer\NorthwindBlazorServer.csproj", "{14883F4A-4FAC-498F-BAFE-2E47ECF25DEE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NorthwindBlazorWasm", "NorthwindBlazorWasm", "{BC900E53-B86B-4A9F-8F4E-0C7982E27AD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthwindBlazorWasm.Server", "NorthwindBlazorWasm\Server\NorthwindBlazorWasm.Server.csproj", "{7E7A2846-A77C-4602-87D1-D9062E663D29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthwindBlazorWasm.Client", "NorthwindBlazorWasm\Client\NorthwindBlazorWasm.Client.csproj", "{2A0CC49C-1FFE-4279-9008-B947A9E318A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthwindBlazorWasm.Shared", "NorthwindBlazorWasm\Shared\NorthwindBlazorWasm.Shared.csproj", "{AFD3B039-7BBD-438B-ABF3-409DB136FF26}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -322,6 +330,18 @@ Global
 		{14883F4A-4FAC-498F-BAFE-2E47ECF25DEE}.Debug|anycpu.Build.0 = Debug|Any CPU
 		{14883F4A-4FAC-498F-BAFE-2E47ECF25DEE}.Release|anycpu.ActiveCfg = Release|Any CPU
 		{14883F4A-4FAC-498F-BAFE-2E47ECF25DEE}.Release|anycpu.Build.0 = Release|Any CPU
+		{7E7A2846-A77C-4602-87D1-D9062E663D29}.Debug|anycpu.ActiveCfg = Debug|Any CPU
+		{7E7A2846-A77C-4602-87D1-D9062E663D29}.Debug|anycpu.Build.0 = Debug|Any CPU
+		{7E7A2846-A77C-4602-87D1-D9062E663D29}.Release|anycpu.ActiveCfg = Release|Any CPU
+		{7E7A2846-A77C-4602-87D1-D9062E663D29}.Release|anycpu.Build.0 = Release|Any CPU
+		{2A0CC49C-1FFE-4279-9008-B947A9E318A9}.Debug|anycpu.ActiveCfg = Debug|Any CPU
+		{2A0CC49C-1FFE-4279-9008-B947A9E318A9}.Debug|anycpu.Build.0 = Debug|Any CPU
+		{2A0CC49C-1FFE-4279-9008-B947A9E318A9}.Release|anycpu.ActiveCfg = Release|Any CPU
+		{2A0CC49C-1FFE-4279-9008-B947A9E318A9}.Release|anycpu.Build.0 = Release|Any CPU
+		{AFD3B039-7BBD-438B-ABF3-409DB136FF26}.Debug|anycpu.ActiveCfg = Debug|Any CPU
+		{AFD3B039-7BBD-438B-ABF3-409DB136FF26}.Debug|anycpu.Build.0 = Debug|Any CPU
+		{AFD3B039-7BBD-438B-ABF3-409DB136FF26}.Release|anycpu.ActiveCfg = Release|Any CPU
+		{AFD3B039-7BBD-438B-ABF3-409DB136FF26}.Release|anycpu.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -354,6 +374,10 @@ Global
 		{D2CC7225-0728-4A92-882C-8A351E6D9A6E} = {8B56F1C3-07DA-4182-A393-1C3CAD0DDCBA}
 		{A19C298F-C08F-441E-BEF6-25E91F5B3FDD} = {8B56F1C3-07DA-4182-A393-1C3CAD0DDCBA}
 		{14883F4A-4FAC-498F-BAFE-2E47ECF25DEE} = {8B56F1C3-07DA-4182-A393-1C3CAD0DDCBA}
+		{BC900E53-B86B-4A9F-8F4E-0C7982E27AD5} = {8B56F1C3-07DA-4182-A393-1C3CAD0DDCBA}
+		{7E7A2846-A77C-4602-87D1-D9062E663D29} = {BC900E53-B86B-4A9F-8F4E-0C7982E27AD5}
+		{2A0CC49C-1FFE-4279-9008-B947A9E318A9} = {BC900E53-B86B-4A9F-8F4E-0C7982E27AD5}
+		{AFD3B039-7BBD-438B-ABF3-409DB136FF26} = {BC900E53-B86B-4A9F-8F4E-0C7982E27AD5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FC26A9DB-68E6-42E4-B3D3-1F08C3CEC8B0}
