@@ -21,7 +21,7 @@ namespace DelegatesAndEvents1
         public void Add(int x)
         {
             _total += x;
-            if (Threshold < _total)
+            if (_total < Threshold)
             {
                 return;
             }

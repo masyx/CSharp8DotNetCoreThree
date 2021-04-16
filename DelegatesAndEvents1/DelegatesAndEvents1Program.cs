@@ -39,6 +39,7 @@ namespace DelegatesAndEvents1
         public static void Counter_ThresholdReached(object sender, ThresholdReachedEventArgs eventArgs)
         {
             Console.WriteLine($"Threshold was set to {eventArgs.Threshold} and reached on: {eventArgs.TimeThresholdReached}");
+            Environment.Exit(1);
         }
     }
 }
