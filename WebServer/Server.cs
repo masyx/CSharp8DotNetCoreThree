@@ -28,5 +28,25 @@ namespace Sergeys.WebServer
 
             return ret;
         }
+
+        /// <summary>
+        /// Instantiate the HttpListener and add the localhost prefixes
+        /// </summary>
+        /// <param name="localHostIPs">List of ip adresses assigned to localhost network devices</param>
+        /// <returns></returns>
+        private static HttpListener InitializeListener(List<IPAddress> localHostIPs)
+        {
+            var listener = new HttpListener();
+            listener.Prefixes.Add("http://localhost/");
+
+            // Listen to IP address as well
+            localHostIPs.ForEach(ip =>
+            {
+                Console.WriteLine($"Listening on IP http://{ip}/");
+                listener.Prefixes.Add($"http://{ip}/");
+            });
+
+            return listener;
+        }
     }
 }
