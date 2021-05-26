@@ -13,6 +13,9 @@ namespace Sergeys.WebServer
     public class Server
     {
         private static HttpListener listener;
+        public static int maxSimultaneousConnections = 20;
+        // set up a semaphore that waits for a specified number of simultaneously allowed connections
+        private static Semaphore sem = new Semaphore(maxSimultaneousConnections, maxSimultaneousConnections);
 
         /// <summary>
         /// Returns list of ip adresses assigned to localhost network devices,
