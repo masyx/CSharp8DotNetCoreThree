@@ -95,5 +95,15 @@ namespace Sergeys.WebServer
             listener.Start();
             Task.Run(() => RunServer(listener));
         }
+
+        /// <summary>
+        /// Starts the web server.
+        /// </summary>
+        public static void Start()
+        {
+            List<IPAddress> localHostIPs = GetLocalHostIPs();
+            HttpListener listener = InitializeListener(localHostIPs);
+            Start(listener);
+        }
     }
 }
