@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace Sergeys.WebServer
 {
@@ -50,6 +51,21 @@ namespace Sergeys.WebServer
             });
 
             return listener;
+        }
+
+        /// <summary>
+        /// Await connections
+        /// </summary>
+        /// <param name="listener"></param>
+        private static async void StartConnectionListener(HttpListener listener)
+        {
+            // Wait for a connection. Return to caller while we wait.
+            HttpListenerContext context = await listener.GetContextAsync();
+
+            // Release the semaphore so that another listener can be immediately started up.
+            sem.Release();
+
+            // We have a connection, do something...
         }
     }
 }
