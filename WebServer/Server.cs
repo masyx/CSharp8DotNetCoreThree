@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -66,6 +67,11 @@ namespace Sergeys.WebServer
             sem.Release();
 
             // We have a connection, do something...
+            string response = "Hello Browser";
+            byte[] encoded = Encoding.UTF8.GetBytes(response);
+            context.Response.ContentLength64 = encoded.Length;
+            context.Response.OutputStream.Write(encoded, 0, encoded.Length);
+            context.Response.OutputStream.Close();
         }
 
         /// <summary>
