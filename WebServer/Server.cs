@@ -14,6 +14,11 @@ namespace Sergeys.WebServer
     {
         private static HttpListener listener;
 
+        /// <summary>
+        /// Returns list of ip adresses assigned to localhost network devices,
+        /// such as hardwired ethernet, wireless, etc.
+        /// </summary>
+        /// <returns></returns>
         private static List<IPAddress> GetLocalHostIPs()
         {
             IPHostEntry host;
