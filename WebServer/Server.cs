@@ -80,5 +80,14 @@ namespace Sergeys.WebServer
                 StartConnectionListener(listener);
             } 
         }
+
+        /// <summary>
+        /// Begin listening to connections on a separate worker thread.
+        /// </summary>
+        private static void Start(HttpListener listener)
+        {
+            listener.Start();
+            Task.Run(() => RunServer(listener));
+        }
     }
 }
