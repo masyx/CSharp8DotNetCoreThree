@@ -132,7 +132,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IComparable", "IComparable\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebServerFromScratch", "WebServerFromScratch", "{6E15BC52-D303-4C2C-9B34-1A4F80A91743}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServer", "WebServer\WebServer.csproj", "{C7998A2C-8DBC-4771-81C4-F65248A0B1F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebServer", "WebServer\WebServer.csproj", "{C7998A2C-8DBC-4771-81C4-F65248A0B1F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleWebServer", "ConsoleWebServer\ConsoleWebServer.csproj", "{F766D18C-1ABD-4BE9-BAD8-F36876568741}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -356,6 +358,10 @@ Global
 		{C7998A2C-8DBC-4771-81C4-F65248A0B1F7}.Debug|anycpu.Build.0 = Debug|Any CPU
 		{C7998A2C-8DBC-4771-81C4-F65248A0B1F7}.Release|anycpu.ActiveCfg = Release|Any CPU
 		{C7998A2C-8DBC-4771-81C4-F65248A0B1F7}.Release|anycpu.Build.0 = Release|Any CPU
+		{F766D18C-1ABD-4BE9-BAD8-F36876568741}.Debug|anycpu.ActiveCfg = Debug|Any CPU
+		{F766D18C-1ABD-4BE9-BAD8-F36876568741}.Debug|anycpu.Build.0 = Debug|Any CPU
+		{F766D18C-1ABD-4BE9-BAD8-F36876568741}.Release|anycpu.ActiveCfg = Release|Any CPU
+		{F766D18C-1ABD-4BE9-BAD8-F36876568741}.Release|anycpu.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -393,6 +399,7 @@ Global
 		{2A0CC49C-1FFE-4279-9008-B947A9E318A9} = {BC900E53-B86B-4A9F-8F4E-0C7982E27AD5}
 		{AFD3B039-7BBD-438B-ABF3-409DB136FF26} = {BC900E53-B86B-4A9F-8F4E-0C7982E27AD5}
 		{C7998A2C-8DBC-4771-81C4-F65248A0B1F7} = {6E15BC52-D303-4C2C-9B34-1A4F80A91743}
+		{F766D18C-1ABD-4BE9-BAD8-F36876568741} = {6E15BC52-D303-4C2C-9B34-1A4F80A91743}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FC26A9DB-68E6-42E4-B3D3-1F08C3CEC8B0}
