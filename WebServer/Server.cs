@@ -67,5 +67,18 @@ namespace Sergeys.WebServer
 
             // We have a connection, do something...
         }
+
+        /// <summary>
+        /// Start awaiting for connections, up to the "maxSimultaneousConnections" value.
+        /// This code runs in a separate thread.
+        /// </summary>
+        private static void RunServer(HttpListener listener)
+        {
+            while (true)
+            {
+                sem.WaitOne();
+                StartConnectionListener(listener);
+            } 
+        }
     }
 }
